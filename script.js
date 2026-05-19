@@ -81,7 +81,7 @@ function openModal(success) {
   modal.classList.remove("hidden");
 
   winText.textContent = success
-    ? `Ты угадал "${movie.displayTitle}" за ${currentFrame + 1} попыток!`
+    ? `Ты угадал "${movie.displayTitle}" за `${currentFrame + 1} ${getAttemptWord(currentFrame + 1)}``
     : `Не угадано. Это был "${movie.displayTitle}"`;
 }
 
@@ -160,3 +160,21 @@ copyBtn.onclick = async () => {
   await navigator.clipboard.writeText(generateShareText());
   alert("Скопировано!");
 };
+function getAttemptWord(n) {
+  const mod10 = n % 10;
+  const mod100 = n % 100;
+
+  if (mod100 >= 11 && mod100 <= 14) {
+    return "попыток";
+  }
+
+  if (mod10 === 1) {
+    return "попытку";
+  }
+
+  if (mod10 >= 2 && mod10 <= 4) {
+    return "попытки";
+  }
+
+  return "попыток";
+}
