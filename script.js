@@ -80,10 +80,9 @@ function endGame(success) {
 function openModal(success) {
   modal.classList.remove("hidden");
 
-  winText.textContent = success
-    ? `Ты угадал "${movie.displayTitle}" за `${currentFrame + 1} ${getAttemptWord(currentFrame + 1)}``
-    : `Не угадано. Это был "${movie.displayTitle}"`;
-}
+winText.textContent = success
+  ? `Ты угадал "${movie.displayTitle}" за ${currentFrame + 1} ${getAttemptWord(currentFrame + 1)}`
+  : `Не угадано. Это был "${movie.displayTitle}"`;
 
 // ---------------- INIT ----------------
 
