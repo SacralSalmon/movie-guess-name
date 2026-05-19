@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Movie Game</title>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <div class="game-container">
+
+    <h1>🎬 Угадай фильм</h1>
+
+    <div class="frame-container">
+      <img id="movie-frame" alt="frame" />
+    </div>
+
+    <input id="guess-input" type="text" placeholder="Введите название фильма" />
+
+    <button id="guess-button">Проверить</button>
+
+    <div id="suggestions"></div>
+
+    <p id="message"></p>
+    <p id="attempts"></p>
+
+    <button id="share-button" style="display:none;">
+      Поделиться результатом
+    </button>
+
+  </div>
+
+  <!-- MODAL -->
+  <div id="win-modal" class="modal hidden">
+    <div class="modal-content">
+      <h2>🎉 Результат</h2>
+      <p id="win-text"></p>
+
+      <button id="copy-result">Скопировать результат</button>
+      <button id="close-modal">Закрыть</button>
+    </div>
+  </div>
+
+  <script src="movies.js"></script>
+  <script src="movies-db.js"></script>
+  <script src="script.js"></script>
+
+</body>
+</html>
