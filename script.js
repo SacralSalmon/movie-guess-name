@@ -39,7 +39,6 @@ function updateFrame() {
 }
 
 // ---------------- SHARE ----------------
-
 function generateShareText() {
   const date = new Date().toLocaleDateString("ru-RU");
 
@@ -49,7 +48,14 @@ function generateShareText() {
     grid += i <= currentFrame ? "🟩" : "⬛";
   }
 
-  return `🎬 Movie Game\n${date}\n${grid}`;
+  // 👇 ВАЖНО: ссылка на игру
+  const gameUrl = window.location.href;
+
+  return `🎬 Movie Game
+${date}
+${grid}
+
+👉 Сыграй сам: ${gameUrl}`;
 }
 
 // ---------------- END GAME ----------------
