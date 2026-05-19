@@ -125,7 +125,9 @@ guessInput.addEventListener("input", () => {
   if (!value) return;
 
   const filtered = movieDatabase
-    .filter(m => m.toLowerCase().includes(value))
+ .filter(m =>
+  m.toLowerCase().startsWith(value.toLowerCase())
+)
     .slice(0, 6);
 
   filtered.forEach(title => {
